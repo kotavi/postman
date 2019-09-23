@@ -13,3 +13,5 @@
 ## Postman collection <a name="postman_collection"></a>
 
 ## Postman environment <a name="postman_environment"></a>
+
+Open `Pastebin.postman_environment.json` and update values for `password` and `dev_key`
