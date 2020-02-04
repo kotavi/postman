@@ -1,0 +1,522 @@
+{
+	"info": {
+		"_postman_id": "3d013323-c3bc-4b83-ad6a-76eb3f098865",
+		"name": "linkedin course",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Authenticate ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3f7eee31-1c44-4e09-915a-8a9dab47f591",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"TOKEN\", jsonData.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"description": "Informs the server that the request body contains JSON",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"demouser\",\n    \"password\": \"demopassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/auth",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"auth"
+							]
+						},
+						"description": "**Send request to retrieve token**"
+					},
+					"response": [
+						{
+							"name": "Invalid password ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"description": "Informs the server that the request body contains JSON",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"demouser\",\n    \"password\": \"demopasswo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/auth",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"auth"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"48-2/v57sfEYbBNI83f6pcUsK9PdZE\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Feb 2020 21:41:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Authentication failed: Unable to locate the requested user\"\n}"
+						},
+						{
+							"name": "Valid User Authentication",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"description": "Informs the server that the request body contains JSON",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"demouser\",\n    \"password\": \"demopassword\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/auth",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"auth"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "277"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"115-KRi0Q2ujLzBf5mSH0RCAAvX+7Xk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Feb 2020 21:40:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUzYmMzMzIwLTIyNTgtMTFlOS04ZGZmLTY1MTNlZjhlNTQ5MyIsInVzZXJuYW1lIjoiZGVtb3VzZXIiLCJmaXJzdG5hbWUiOiJEZW1vIiwibGFzdG5hbWUiOiJVc2VyIiwiaWF0IjoxNTgwODUyNDU3LCJleHAiOjE1ODA4NTYwNTd9.XRKzysDBvGq3B6m114H4MV2q934OPN0neeEQ9jbSm4c\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Boards",
+			"item": [
+				{
+					"name": "List boards",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "806754ea-6d00-4ae6-9fad-91fe7a49f1e6",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"BOARD_ID\", jsonData.data[1].id);",
+									"",
+									"",
+									"// pm.test(\"Retrieve doard_id\", function () {",
+									"//     var jsonData = pm.response.json();",
+									"//     pm.expect(jsonData.data[0].id).to.eql(\"4af02b20-0e35-11e9-86bb-a1378ad71a65\");",
+									"//     pm.environment.set(\"BOARD_ID\", jsonData.data[0].id);",
+									"// });",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/boards/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"boards",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get board",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "806754ea-6d00-4ae6-9fad-91fe7a49f1e6",
+								"exec": [
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/boards/{{BOARD_ID}}",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"boards",
+								"{{BOARD_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search boards",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"filters\": [\n        {\n            \"field\": \"description\",\n            \"value\": \"management\"\n        }\n    ],\n    \"sort\": \"name\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/boards/search",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"boards",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List tickets for board",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b55ebb01-bba8-44d1-abfb-089e5d3d922e",
+								"exec": [
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.data).to.have.lengthOf(5);",
+									"    ",
+									"    pm.environment.set(\"TICKET_ID\", jsonData.data[0].id);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/boards/{{BOARD_ID}}/tickets",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"boards",
+								"{{BOARD_ID}}",
+								"tickets"
+							]
+						},
+						"description": "Returns a list of tickets for the board"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Tickets",
+			"item": [
+				{
+					"name": "Get Ticket",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/tickets/{{TICKET_ID}}",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"tickets",
+								"{{TICKET_ID}}"
+							]
+						},
+						"description": "Authentication optional. Get details for a ticket.\n\n* *Anonymous users*: Tickets on public boards only.\n* *Authenticated users*: Tickets on public boards or boards owned by the current user."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Ticket",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ec17e2c4-592c-45b4-b8e5-c32fe8320629",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"TICKET_TO_DELETE\", jsonData.id);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"boardId\": \"{{BOARD_ID}}\",\n\t\"name\": \"My first ticket\",\n\t\"description\": \"This is the first ticket in the system\"\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/tickets",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"tickets"
+							]
+						},
+						"description": "Authentication required. Create a ticket on the specified board as long as the user owns that board."
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate Ticket",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/tickets/{{TICKET_TO_DELETE}}",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"tickets",
+								"{{TICKET_TO_DELETE}}"
+							]
+						},
+						"description": "Authentication required. Mark a ticket inactive (soft-delete) if the ticket is owned by the current user."
+					},
+					"response": []
+				}
+			],
+			"description": "Request for managing tickets",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "get api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6a59c1ee-1b69-43d5-b59c-1c3bfc535b9b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "cd0b9ce7-4dd2-4db6-95d9-8e35435f6fd3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

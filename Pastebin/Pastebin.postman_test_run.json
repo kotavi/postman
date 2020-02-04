@@ -1,0 +1,252 @@
+{
+	"id": "9bed0c08-1c07-4dc3-89d6-849cb64f4cb5",
+	"name": "Pastebin",
+	"allTests": [],
+	"timestamp": "2020-01-30T22:48:30.671Z",
+	"collection_id": "f0b3545b-c41a-458d-8cac-570ffa41fbd8",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "993cd66d-3624-406b-824f-2c63a34eeecc",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "f0b3545b-c41a-458d-8cac-570ffa41fbd8",
+		"name": "Pastebin",
+		"order": [
+			"af99b384-1105-4d53-93b7-4dc3fec417ad",
+			"e06b099b-2709-4aaf-9970-39c43ae4c5ad",
+			"415eede4-bddd-4e77-9b16-cfdd161775b1",
+			"4e296052-d00d-49cf-acb8-cb4cc1ec4c17",
+			"c0a86f99-08db-4ada-a692-37db28fe52f9"
+		],
+		"folders_order": [],
+		"isFavorite": false
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"name": "1) Creating An 'api_user_key' Using The API Member Login System",
+			"id": "af99b384-1105-4d53-93b7-4dc3fec417ad",
+			"url": "pastebin.com/api/api_login.php",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"298"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "298",
+			"totalRequestTime": "298",
+			"iterationResults": {}
+		},
+		{
+			"name": "2) Getting A Users Information And Settings",
+			"id": "c0a86f99-08db-4ada-a692-37db28fe52f9",
+			"url": "pastebin.com/api/api_post.php",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"153"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "153",
+			"totalRequestTime": "153",
+			"iterationResults": {}
+		},
+		{
+			"name": "3) list Pastes Created By A User",
+			"id": "4e296052-d00d-49cf-acb8-cb4cc1ec4c17",
+			"url": "pastebin.com/api/api_post.php",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"90"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "90",
+			"totalRequestTime": "90",
+			"iterationResults": {}
+		},
+		{
+			"name": "4) create new paste",
+			"id": "e06b099b-2709-4aaf-9970-39c43ae4c5ad",
+			"url": "https://pastebin.com/api/api_post.php",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"706"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "706",
+			"totalRequestTime": "706",
+			"iterationResults": {}
+		},
+		{
+			"name": "5) Deleting A Paste Created By A User",
+			"id": "415eede4-bddd-4e77-9b16-cfdd161775b1",
+			"url": "pastebin.com/api/api_post.php",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Body is correct": true
+			},
+			"testPassFailCounts": {
+				"Body is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"166"
+			],
+			"allTests": [
+				{
+					"Body is correct": true
+				}
+			],
+			"time": "166",
+			"totalRequestTime": "166",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 1,
+	"totalFail": 0,
+	"totalTime": 1413,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "1) Creating An 'api_user_key' Using The API Member Login System",
+			"id": "af99b384-1105-4d53-93b7-4dc3fec417ad",
+			"url": "pastebin.com/api/api_login.php",
+			"time": "2020-01-30T22:48:30.671Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "2) Getting A Users Information And Settings",
+			"id": "c0a86f99-08db-4ada-a692-37db28fe52f9",
+			"url": "pastebin.com/api/api_post.php",
+			"time": "2020-01-30T22:48:30.671Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "3) list Pastes Created By A User",
+			"id": "4e296052-d00d-49cf-acb8-cb4cc1ec4c17",
+			"url": "pastebin.com/api/api_post.php",
+			"time": "2020-01-30T22:48:30.671Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "4) create new paste",
+			"id": "e06b099b-2709-4aaf-9970-39c43ae4c5ad",
+			"url": "https://pastebin.com/api/api_post.php",
+			"time": "2020-01-30T22:48:30.671Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "5) Deleting A Paste Created By A User",
+			"id": "415eede4-bddd-4e77-9b16-cfdd161775b1",
+			"url": "pastebin.com/api/api_post.php",
+			"time": "2020-01-30T22:48:30.671Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Body is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}
