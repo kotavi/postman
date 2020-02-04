@@ -14,7 +14,7 @@ See LinkedIn course [Introducing Postman](https://www.linkedin.com/learning/intr
     * users to manage boards and tickets,
     * authentication to establish user context.
     
- ```commandline
+```bash
 $ pwd
 ~/postman/api/node
 $ npm i
